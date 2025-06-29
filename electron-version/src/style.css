@@ -1,0 +1,292 @@
+@keyframes rollUp{
+    from {
+      background-position-y: 0;
+    }
+    to {
+      background-position-y: 1000px; 
+    }
+}
+
+@keyframes color{
+    100%{color:red;}
+    75%{color:green ;}
+    50%{color:cyan ;}
+    25%{color:magenta ;}
+    0%{color:darkgoldenrod;}
+}
+
+@keyframes border{
+    100%{border: 3px solid red;}
+    75%{border: 3px solid green;}
+    50%{border: 3px solid cyan;}
+    25%{border: 3px solid magenta;}
+    0%{border: 3px solid darkgoldenrod;}
+}
+
+@keyframes boxshadow{
+    100%{box-shadow: 0 10px 20px red;}
+    75%{box-shadow: 0 10px 20px green;}
+    50%{box-shadow: 0 10px 20px cyan;}
+    25%{box-shadow: 0 10px 20px magenta;}
+    0%{box-shadow: 0 10px 20px darkgoldenrod;}
+}
+
+@keyframes wrapshadow{
+    100%{box-shadow: 0 10px 50px red;}
+    75%{box-shadow: 0 10px 50px green;}
+    50%{box-shadow: 0 10px 50px cyan;}
+    25%{box-shadow: 0 10px 50px magenta;}
+    0%{box-shadow: 0 10px 50px darkgoldenrod;}
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222; 
+    color: #fff;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.wrapshadow{
+    animation: wrapshadow 1s infinite alternate;
+}
+
+#bgCanvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+input{
+    background-color: gray;
+}
+input::placeholder{
+    color: white;
+}
+
+.wrap{
+    width: 55%;
+    margin: 5vh auto 0;
+    font-family: 'open sans', roboto, sans-serif; 
+    background: linear-gradient(135deg, #1a0000, #4d0000, #1a0000);
+    color: #fff;
+    box-shadow: 0 10px 50px red;
+    border-radius: 15px;
+}
+
+.gamename{
+    animation: color 5s infinite alternate;
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.game{
+    display: flex;
+    margin-bottom: 3vh;
+}
+.game div{
+    height: 30vh;
+    flex-grow: 1;
+    margin: 10px;
+    border: 3px solid darkred;
+    box-shadow: 0 10px 20px red;
+    border-radius: 15px;
+}
+
+.play{
+    text-align: center;
+}
+
+.play input{
+    height: 90px;
+    font-size: 40px;
+    padding: 20px;
+    width: 400px;
+    border: 3px solid black;
+    text-align: center;
+}
+.play #start{
+    position: relative;
+    z-index: 1;
+    width: 40%;
+    height:55px;
+    text-align: center;
+    font-size: 26px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #8b0000, #4b0000);
+    border: none;
+    color: white;
+    cursor: pointer;
+    letter-spacing: 6px;
+    transition: 0.5s;
+    border-radius: 15px;
+    border: 3px solid gold;
+    overflow: hidden;
+}
+.play #start span {
+    position: relative;
+    z-index: 2;
+}
+.play #start::before,
+.play #start::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.play #start::before {
+    background: linear-gradient(to bottom, #8b0000, #4b0000);
+    opacity: 1;
+}
+
+.play #start::after {
+    background: linear-gradient(to bottom, #8b0000, #ec0808);
+    opacity: 0;
+}
+
+.play #start:hover::before {
+    opacity: 0;
+}
+
+.play #start:hover::after {
+    opacity: 1;
+}
+.play #start:disabled {
+    cursor: not-allowed;
+    color: #bbb;
+    border-color: silver;
+}
+
+.play #start:disabled::before {
+    background: linear-gradient(to bottom, #222222, #7a7a7a);
+    opacity: 1;
+}
+
+.play #start:disabled::after {
+    opacity: 0; 
+}
+
+.play #start:disabled:hover::before {
+    opacity: 1;
+}
+
+.play #start:disabled:hover::after {
+    opacity: 0;
+}
+
+.bet-container {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(to bottom, #8b0000, #4b0000);
+    border: 3px solid gold;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    height: 55px;
+    font-size: 15px;
+  }
+
+  .btn-minus, .btn-plus {
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    text-align: center;
+    background-color: gold;
+    border: none;
+    margin: 10px;
+    padding-right: 5px;
+    font-weight: 900;
+    color: #4b0000;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .bet-amount {
+    margin: 0 15px;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .label {
+    color: gold;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+
+  .btn-minus:active, .btn-plus:active {
+    transform: scale(0.95);
+  }
+
+.panel{
+    margin: 80px 0 40px;
+    font-size: 26px;
+}
+
+.panel, .score{
+    font-size: 26px;
+}
+.panel span, .score span{
+    font-weight: bold;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]{
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+  
+.color{
+    animation: rollUp 0.1s 20;
+} 
+
+#msgs{
+    margin: 10px;
+    height: 180px;
+    overflow: hidden;
+}
+
+@media (max-width: 1024px){
+    .wrap{
+        width: 90%;
+    }
+    .play input{
+        height: 70px;
+        font-size: 30px;
+        display: block;
+        margin: 20px auto;
+    }
+    .play button{
+        height: 74px;
+        font-size: 30px;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 20px ;
+    }
+}

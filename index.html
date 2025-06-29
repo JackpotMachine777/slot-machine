@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HOT SLOT 777</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/icon.png">
+</head>
+<body>
+    <div class="wrap"><br>
+        <canvas id="bgCanvas"></canvas>
+        <h1 class="gamename">HOT SLOT 777</h1>
+      
+        <section class="game">
+          <div class="color"></div>
+          <div class="color"></div>
+          <div class="color"></div>
+        </section>
+
+        <audio src="sounds/slotsound.mp3" id="slotsound"></audio>
+        <audio src="sounds/jackpotsound.mp3" id="jackpotsound"></audio>
+        <audio src="sounds/ambient.mp3" id="ambient"></audio>
+        <audio src="sounds/bancruptsound.mp3" id="bancrupt"></audio>
+      
+        <section class="play">
+          <div class="bet-container">
+            <button class="btn-minus">-</button>
+            <div class="bet-amount"><span id="amount">2.00</span> zł<br><p class="label">ZAKŁAD ŁĄCZNY</p></div><br>
+            <button class="btn-plus">+</button>
+        </div>
+          <button id="start"><span>Zakręć!</span></button>
+        </section>
+      
+        <section id="msgs">
+          <section class="panel">Witaj w grze "HOT SLOT 777"!</section>
+          <section class="score"></section>
+          <section class="gains"></section>
+        </section><br>
+    </div>
+    <script src="game.js" defer></script>
+</body>
+</html>
